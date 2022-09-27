@@ -1,7 +1,6 @@
 import React from "react";
 import { Helmet } from "react-helmet-async";
 
-//const DOMAIN = "http://localhost:3001/";/* change this */
 const MAIN_KEYWORDS = "Bergen, Ulriksbanen, accommodation, hotel, guesthouse, bed&breakfast";
 const DEFAULT_TITLE = "Holidaze";
 const DEFAULT_DESCRIPTION = "Holidaze is where you will find your next place to stay when visiting Bergen";

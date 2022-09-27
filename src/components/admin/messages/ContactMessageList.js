@@ -7,7 +7,8 @@ import styles from "../enquiries/Enquiry.module.css";
 const ContactMessageList = () => {
   const [messages, setMessages] = useState([]);
   //const [loading, setLoading] = useState(true);
-  const [setError] = useState(null);
+  // eslint-disable-next-line
+  const [error, setError] = useState(null);
 
   const http = useAxios();
 

@@ -39,7 +39,7 @@ const EnquiryForm = (props) => {
 
   function onSubmit(data) {
     //const id = data.id;
-    console.log(data);
+    //console.log(data);
 
     axios
       .post("https://noroff-exam.herokuapp.com/api/enquiries", {
@@ -102,4 +102,3 @@ const EnquiryForm = (props) => {
 };
 
 export default EnquiryForm;
-//for date validation : https://stackoverflow.com/questions/69985066/yup-date-validation-start-date-must-not-be-same-as-end-date

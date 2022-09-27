@@ -41,7 +41,8 @@ const schema = yup.object().shape({
 
 const AddForm = () => {
   //const [response, setResponse] = useState({});
-  const [submitted] = useState(false);
+  // eslint-disable-next-line
+  const [submitted, setSubmitted] = useState(false);
   //const [postError, setPostError] = useState(null);
   //const [success, setSuccess] = useState(null);
   const [auth] = useContext(AuthContext);

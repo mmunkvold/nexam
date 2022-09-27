@@ -7,7 +7,8 @@ import styles from "./Enquiry.module.css";
 const EnquiryList = () => {
   const [enquiries, setEnquiries] = useState([]);
   //const [loading, setLoading] = useState(true);
-  const [setError] = useState(null);
+  // eslint-disable-next-line
+  const [error, setError] = useState(null);
 
   const http = useAxios();
 
