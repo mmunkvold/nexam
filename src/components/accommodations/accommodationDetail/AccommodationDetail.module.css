@@ -1,0 +1,96 @@
+.main {
+  background: var(--bg2-clr);
+  margin: 3em auto 2em;
+  padding: 0.1em 1em 2em;
+  width: 90%;
+  max-width: 1200px;
+}
+
+.flex {
+  display: flex;
+  flex-direction: column;
+  gap: 3em;
+}
+/* IMAGE GALLERY GRID DESKTOP*/
+
+.imageGalleryGrid {
+  display: grid;
+  width: 100%;
+  flex: 0 0 65%;
+  margin-top: 1.5em;
+}
+
+.thumbnails {
+  display: flex;
+  /*  flex-wrap: wrap; */
+}
+
+.thumbnail {
+  display: none;
+}
+
+.text {
+  flex: 0 0 35%;
+}
+
+.icons {
+  font-size: 1.3em;
+  margin-right: 10px;
+  position: relative;
+  top: 3px;
+}
+
+.mainBottom {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.button {
+  composes: button from "../../formElements/buttons/Button.module.css";
+  background: var(--bg4-clr);
+}
+
+.right {
+  text-align: right;
+  margin-right: 1em;
+}
+
+.horizontalLine {
+  border-top: 1px solid var(--bg3-clr);
+  margin: 2em 0;
+}
+
+.addressBox {
+  background: rgba(202, 216, 230, 0.1);
+  margin-bottom: 1em;
+  padding: 1em 2em;
+  width: 300px;
+  border-radius: var(--border-radius);
+}
+
+.price {
+  border: 2px solid var(--bg4-clr);
+  border-radius: var(--border-radius);
+  font-weight: bold;
+  letter-spacing: 1.2px;
+  padding: 15px;
+}
+
+@media screen and (min-width: 600px) {
+  .mainBottom {
+    flex-direction: row;
+    gap: 2em;
+  }
+}
+@media screen and (min-width: 768px) {
+  .main {
+    padding: 0.1em 5em 2em;
+  }
+  .thumbnail {
+    display: flex;
+  }
+  .flex {
+    flex-direction: row;
+  }
+}

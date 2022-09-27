@@ -1,0 +1,279 @@
+@import url("https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,400;0,600;0,700;1,400&family=Ovo&display=swap");
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+#root {
+  --ff-logo: "Birthstone", cursive;
+  --ff-heading: "Ovo", serif;
+  --ff-body: "Mulish", sans-serif;
+
+  /* Foreground colors */
+  --text-clr: #f7f9fb;
+  --fg2-clr: #cad8e6;
+  --fg3-clr: #8dabca;
+  --fg4-clr: #4a739f;
+
+  /*  Background colors */
+  --bg-clr: #121212;
+  --bg2-clr: #192635;
+  --bg3-clr: #273c53;
+  --bg4-clr: #355272;
+
+  /* Notification/Link/Button colors */
+  --warning-clr: #ffcc66;
+  --warning2-clr: #ffaa00;
+  --danger-clr: #b83309;
+  --danger2-clr: #f56436;
+
+  --btn-clr: #92c4ff;
+  --link-clr: #00a695;
+
+  --white-clr: #fff;
+  --black-clr: #000;
+
+  accent-color: #696; /* change this to a nicer color - this is checkbox and radiobuttons THIS IS CORRECT WAY, NO MISSING --*/
+
+  /* these colors need to change/check */
+  --primary-clr: #155377;
+  --light-grey-clr: #d3d3d3;
+  --medium-grey-clr: #636e6e;
+  --dark-grey-clr: #4e5656;
+
+  /* other common/global styles */
+  --border-radius: 2px;
+}
+
+html:focus-within {
+  scroll-behavior: smooth;
+}
+
+html {
+  scroll-behavior: smooth;
+  height: 100%;
+}
+
+html,
+body {
+  margin: 0;
+  height: 100%;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100%;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+/* TYPOGRAPHY */
+
+a {
+  color: var(--link-clr);
+  padding: 0.3em;
+  border-radius: var(--border-radius);
+  border: 2px solid transparent;
+}
+
+a:hover {
+  text-decoration: none;
+  background: var(--bg4-clr);
+}
+
+.current {
+  border: 2px solid var(--bg4-clr);
+  text-decoration: none;
+}
+
+.react-tabs__tab:hover {
+  color: var(--link-clr);
+}
+
+.react-tabs__tab--selected {
+  font-weight: bold;
+}
+
+/*  HEADER AREA AND NAVIGATION */
+/* these works here but not in navigation.module.css file... why? (removed from there, so some styling here and some there) */
+
+.menu ul {
+  display: flex;
+  /* padding: 0; */
+  gap: 2em;
+}
+
+@media screen and (max-width: 768px) {
+  .menu ul {
+    position: absolute;
+    top: 82px;
+    left: 0;
+    flex-direction: column;
+    width: 100%;
+    background: var(--bg4-clr);
+    display: none;
+    padding: 1em 0;
+  }
+  .menu.expanded ul {
+    z-index: 1000;
+    display: block;
+  }
+
+  .menu li {
+    text-align: center;
+    margin: 0;
+    color: red;
+  }
+}
+
+/* MODAL */
+/* need these here? */
+.modal {
+  background-color: rgba(0, 0, 0, 0.9);
+  position: fixed;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+}
+.modal.enter-done {
+  opacity: 1;
+  pointer-events: visible;
+}
+
+.modal.exit {
+  opacity: 1;
+}
+
+.modal.enter-done .modalContent {
+  transform: translateY(0);
+}
+
+.modal.exit .modalContent {
+  transform: translateX(-500px);
+}
+/* MISCELLANOUS*/
+
+/* .horizontalLine {
+  color: var(--bg3-clr);
+} */
+
+/* check what to keep or not */
+
+/* .container {
+  max-width: 1000x;
+  margin: 1rem auto;
+} */
+
+/* .wrapper {
+  flex: 1 0 auto;
+} */
+
+.nav {
+  padding-left: 2em;
+}
+
+.brand {
+  font-size: 2em;
+  color: yellow !important;
+  padding-left: 1em;
+}
+
+.logged-in-link {
+  color: orange !important;
+}
+
+span {
+  font-weight: bold;
+}
+
+.center {
+  text-align: center;
+}
+
+/* DETAIL PAGE */
+
+.detail {
+  max-width: 500px;
+  margin: 0 auto 5em;
+  padding: 0 1em;
+}
+
+.txt-container {
+  margin: 0 auto;
+  padding: 1em;
+}
+
+ul {
+  margin-top: 1em;
+  padding-left: 0;
+  list-style: none;
+}
+
+.img-container {
+  text-align: center;
+}
+
+.detail img {
+  max-height: 300px;
+}
+
+/* styles from the search video with dropdown */
+/* .App {
+  font-family: sans-serif;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.search-container {
+  width: 280px;
+  display: flex;
+  flex-direction: column;
+}
+
+.dropdown {
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  border: 1px solid gray;
+}
+
+.dropdown:empty {
+  border: none;
+}
+
+.dropdown-row {
+  cursor: pointer;
+  text-align: start;
+  margin: 2px 0;
+}
+
+input {
+  width: 220px;
+}
+
+.search-inner {
+  display: flex;
+}
+ */
+@media (prefers-reduced-motion: reduce) {
+  html:focus-within {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}

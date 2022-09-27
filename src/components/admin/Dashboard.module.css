@@ -1,0 +1,25 @@
+.flex {
+  display: flex;
+  flex-direction: column;
+  gap: 3em;
+}
+
+.tabList {
+  font-size: smaller;
+  margin-top: 0;
+}
+
+@media screen and (min-width: 768px) {
+  .flex {
+    flex-direction: row;
+  }
+  .leftColumn {
+    flex: 0 0 35%;
+  }
+
+  .rightColumn {
+    flex: 0 0 55%;
+    margin-right: 1em;
+    background: var(--bg2-clr);
+  }
+}

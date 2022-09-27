@@ -1,0 +1,12 @@
+/* WRAPPER THAT WRAPS MAIN CONTENT (BODY) */
+
+.wrapperMain {
+  width: 100%;
+  max-width: 1360px;
+  margin: 0 auto 3em;
+  min-height: 100vh;
+  font-family: var(--ff-body);
+  color: var(--text-clr);
+  padding: 0 1em;
+  /* border: 4px solid greenyellow; */
+}

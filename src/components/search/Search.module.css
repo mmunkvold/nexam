@@ -1,0 +1,50 @@
+.searchLink {
+  cursor: pointer;
+  padding: 0.5em 2em 0;
+}
+
+.searchLink:hover {
+  background: var(--bg4-clr);
+}
+
+.searchResults {
+  margin: 0 auto;
+  background: var(--bg3-clr);
+  position: absolute;
+  width: 300px;
+  z-index: 1000;
+}
+
+.searchResults a {
+  color: var(--text-clr);
+}
+
+.searchResults a:hover {
+  background: none;
+}
+
+.input {
+  background: none /* !important */; /* do i need these importants? */
+  color: var(--text-clr);
+  width: 240px;
+  border: none /* !important */;
+  border-bottom: 1px solid var(--fg2-clr) /* !important */;
+  margin-left: auto;
+}
+
+::placeholder {
+  color: var(--fg2-clr);
+  font-style: italic;
+  letter-spacing: 1px;
+}
+
+.form {
+  composes: form from "../formElements/form/Form.module.css";
+}
+
+@media (min-width: 1150px) {
+  .searchResult,
+  .input {
+    width: 300px;
+  }
+}

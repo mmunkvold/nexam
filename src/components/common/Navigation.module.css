@@ -1,0 +1,98 @@
+.header {
+  background-color: var(--bg2-clr);
+  width: 100vw;
+  position: relative;
+  left: 50%;
+  right: 50%;
+  margin-left: -50vw;
+  margin-right: -50vw;
+}
+
+nav {
+  height: 100px;
+  width: 95%;
+  max-width: 1390px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+}
+
+.menu {
+  margin-left: auto;
+}
+
+.link {
+  text-decoration: none;
+  display: block;
+  width: 100%;
+  color: var(--text-clr);
+  font-family: var(--ff-body);
+}
+
+.logo {
+  margin-left: 1rem;
+}
+
+.logo:hover {
+  background: none;
+}
+
+.search {
+  display: block;
+}
+
+.hamburger {
+  font-size: 2em;
+  color: var(--text-clr);
+  background-color: transparent;
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  right: 25px;
+  transform: translateY(-50%);
+  display: none;
+  border: none;
+}
+
+.hamburger:hover {
+  color: var(--link-clr);
+}
+
+.loggedIn {
+  display: flex;
+  flex-direction: row;
+}
+
+.loginBtn {
+  max-width: 100px;
+  margin: 0 auto;
+}
+
+@media screen and (max-width: 768px) {
+  .hamburger {
+    display: block;
+  }
+  .link {
+    width: 100%;
+    padding: 1.2rem 0;
+  }
+  .link:hover {
+    background-color: var(--bg3-clr);
+  }
+  .loggedIn {
+    display: flex;
+    flex-direction: column;
+  }
+  .search {
+    display: none;
+  }
+}
+@media screen and (max-width: 1150px) {
+  .search {
+    display: none;
+  }
+}
+
+/* NB! some of the styling for the nav is in app.css as they dont work here... */

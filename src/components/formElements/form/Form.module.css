@@ -1,0 +1,89 @@
+/* THIS MAKES FORM OPEN AND CLOSE ON CLICK, BUT IT CLOSES ON EVERYTHING SO CAN WRITE.... */
+.form {
+  display: none;
+}
+
+.form.expanded {
+  display: block;
+}
+/* end open/close */
+/* all this needs to be cleaned up, not everything is used... */
+.form {
+  display: flex;
+  flex-direction: column;
+  margin: 1em auto 4em;
+  padding: 1em;
+  width: 100%;
+  background: var(--bg3-clr);
+  border-radius: 5px;
+  max-width: 400px;
+  color: var(--text-clr);
+}
+
+label {
+  padding: 1em 0 0.3em;
+  color: var(--fg2-clr);
+}
+
+select {
+  margin-left: 1em;
+  border: 2px solid orange;
+}
+
+input,
+textarea {
+  font-size: 1rem;
+  width: 100%;
+  margin: 0.5em 0;
+  padding: 5px;
+  border: 2px solid var(--fg4-clr);
+  background: var(--bg4-clr);
+  color: var(--text-clr);
+}
+
+input[type="radio"],
+[type="checkbox"] {
+  width: auto;
+  display: inline;
+  margin: 0.5em 0.5em 0 1.5em;
+  border: 2px solid purple;
+}
+
+fieldset {
+  margin-top: 1em;
+  color: var(--fg2-clr);
+  border: 2px solid var(--fg4-clr);
+}
+
+.button {
+  composes: button from "../buttons/Button.module.css";
+  width: 50%;
+  margin-left: 0 !important; /* do i need this? */
+}
+
+.logout-btn {
+  width: 100px;
+  background: orange;
+  color: black;
+}
+
+.logout-btn:hover {
+  background: black;
+  color: orange;
+  border: 1px solid orange;
+}
+
+/* move this to formerror file? */
+.formError {
+  background: #fbb;
+  color: darkred;
+  border: 1px solid darkred;
+  padding: 0.5rem 1rem;
+}
+
+.success {
+  background: rgb(221, 246, 221);
+  color: darkgreen;
+  border: 1px solid darkgreen;
+  padding: 0.5rem 1rem;
+}

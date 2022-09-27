@@ -1,0 +1,5 @@
+/* CONTAINER TO WRAP THE WHOLE SITE */
+.container {
+  background: var(--bg-clr);
+  overflow: hidden; /* so header and footer bg dont overflow and creates horizontal scrollbar */
+}
