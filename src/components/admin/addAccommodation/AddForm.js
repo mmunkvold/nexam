@@ -15,28 +15,12 @@ const schema = yup.object().shape({
   description: yup.string().required("Please write a description"),
   short_description: yup.string().required("Please write a short description"),
   address: yup.string().required("Please enter an address"),
-  cover_image: yup
-    .mixed()
-    .test("required", "You need to provide a file", (value) => {
-      return value && value.length;
-    })
-    .test("fileSize", "The file is too large", (value, context) => {
-      return value && value[0] && value[0].size <= 200000;
-    })
-    .test("type", "We only support jpeg", function (value) {
-      return value && value[0] && value[0].type === "image/jpeg";
-    }),
-  images: yup
-    .mixed()
-    .test("required", "You need to provide a file", (value) => {
-      return value && value.length;
-    })
-    .test("fileSize", "The file is too large", (value, context) => {
-      return value && value[0] && value[0].size <= 200000;
-    })
-    .test("type", "We only support jpeg", function (value) {
-      return value && value[0] && value[0].type === "image/jpeg";
-    }),
+  cover_image: yup.mixed().test("required", "You need to provide a file", (value) => {
+    return value && value.length;
+  }),
+  images: yup.mixed().test("required", "You need to provide a file", (value) => {
+    return value && value.length;
+  }),
 });
 
 const AddForm = () => {
@@ -50,6 +34,7 @@ const AddForm = () => {
   const {
     register,
     setValue,
+    reset,
     handleSubmit,
     formState: { errors },
   } = useForm({ resolver: yupResolver(schema) });
@@ -78,15 +63,15 @@ const AddForm = () => {
 
     formData.append("data", JSON.stringify(dataInput));
 
-    //single-file (cover_image)
+    //"cover_image"
     formData.append("files.cover_image", data.cover_image[0]);
 
-    //multiple (images)
+    //"images"
     for (let i = 0; i < data.images.length; i++) {
       formData.append("files.images", data.images[i]);
     }
 
-    //create new product
+    //add new accommodation
     const addProduct = await fetch("https://noroff-exam.herokuapp.com/api/products?populate=*", {
       method: "POST",
       body: formData,
@@ -96,19 +81,16 @@ const AddForm = () => {
     });
     const result = await addProduct.json();
     console.log("addProductResult:", result);
+    reset();
   }
   const onMultiFileChange = (e) => {
     const files = e.target.files;
-    /*  console.log("onMultiFileChange", files); */
-    setValue("images", files); //change this
+    setValue("images", files);
   };
 
   const onSingleFileChange = (e) => {
     const file = e.target.files;
-    /* console.log("onSingleFileChange", file);
-    console.log("onSingleFileChange1", file[0]); */
-
-    setValue("cover_image", file[0]); //change this
+    setValue("cover_image", file[0]);
   };
 
   return (
@@ -140,11 +122,11 @@ const AddForm = () => {
 
         <label htmlFor="description">Description:</label>
         {errors.description && <FormError>{errors.description.message}</FormError>}
-        <input id="description" type="text" name="description" {...register("description", { required: true })} />
+        <textarea id="description" type="text" name="description" rows="4" {...register("description", { required: true })} />
 
         <label htmlFor="short_description">Short description:</label>
         {errors.short_description && <FormError>{errors.short_description.message}</FormError>}
-        <input id="short_description" type="text" name="short_description" {...register("short_description", { required: true })} />
+        <textarea id="short_description" type="text" name="short_description" rows="2" {...register("short_description", { required: true })} />
 
         <label htmlFor="address">Address:</label>
         {errors.address && <FormError>{errors.address.message}</FormError>}
@@ -152,7 +134,6 @@ const AddForm = () => {
 
         <fieldset>
           <legend>Facilities:</legend>
-          {/* error here? */}
           <div>
             <input id="pets_allowed" type="checkbox" name="pets_allowed" value="" {...register("pets_allowed", { required: false })} />
             <label htmlFor="pets_allowed">Pets allowed? (leave unchecked for "No")</label>
@@ -175,15 +156,15 @@ const AddForm = () => {
         {errors.price && <FormError>{errors.price.message}</FormError>}
         <input id="price" type="number" name="price" {...register("price", { required: true })} />
 
-        <label htmlFor="file2">Cover Image:</label>
+        <label htmlFor="file">Cover Image:</label>
         {/* change id! */}
-        {errors.cover && <FormError>{errors.cover.message}</FormError>}
-        <input type="file" id="file2" name="file" onChange={onSingleFileChange} {...register("cover_image", { required: true })}></input>
+        {errors.cover_image && <FormError>{errors.cover_image.message}</FormError>}
+        <input type="file" id="file" name="file" onChange={onSingleFileChange} {...register("cover_image", { required: true })}></input>
 
-        <label htmlFor="file">Images:</label>
+        <label htmlFor="files">Images:</label>
         {/* change htmlfor or id! */}
         {errors.images && <FormError>{errors.images.message}</FormError>}
-        <input type="file" id="file" name="multi-file" onChange={onMultiFileChange} multiple {...register("images", { required: true })}></input>
+        <input type="file" id="files" name="files" onChange={onMultiFileChange} multiple {...register("images", { required: true })}></input>
         <div className={styles2.flex}>
           <button className={styles.button}>Add product</button>
         </div>

@@ -49,7 +49,7 @@ const AccommodationDetail = ({
               <div className={styles.thumbnails}>
                 {images.data.map((image, i) => (
                   <div key={i} className="">
-                    <img src={`${image.attributes.formats.thumbnail.url}`} alt={image.name} className={styles.thumbnail} />
+                    <img src={`${image.attributes.formats.thumbnail.url}`} alt={name} className={styles.thumbnail} />
                   </div>
                 ))}
               </div>

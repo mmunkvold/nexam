@@ -50,7 +50,7 @@ nav {
   cursor: pointer;
   position: absolute;
   top: 50%;
-  right: 25px;
+  right: 15px;
   transform: translateY(-50%);
   display: none;
   border: none;

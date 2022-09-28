@@ -9,8 +9,12 @@ import styles from "../../home/HomePage.module.css";
 const Accommodations = ({ id, name, pets, cover_image, parking, wifi, breakfast, price, type }) => {
   return (
     <div>
-      <Link to={`detail/${id}`}>
-        <div className={`${styles.card} ${styles.cardImg}`} style={{ backgroundImage: `url('${cover_image.data.attributes.url}')` }}>
+      <Link to={`detail/${id}`} className={styles.detailLink}>
+        <div
+          className={`${styles.card} ${styles.cardImg} `}
+          style={{ backgroundImage: `url('${cover_image.data.attributes.url}')` }}
+          alt={cover_image.data.attributes.alternativeText}
+        >
           <div className={styles.overlay}>
             <h3>{name}</h3>
             <p>

@@ -35,10 +35,8 @@
   --white-clr: #fff;
   --black-clr: #000;
 
-  accent-color: #696; /* change this to a nicer color - this is checkbox and radiobuttons THIS IS CORRECT WAY, NO MISSING --*/
+  accent-color: rgb(232, 101, 219);
 
-  /* these colors need to change/check */
-  --primary-clr: #155377;
   --light-grey-clr: #d3d3d3;
   --medium-grey-clr: #636e6e;
   --dark-grey-clr: #4e5656;
@@ -72,6 +70,7 @@ img {
   max-width: 100%;
   display: block;
 }
+
 /* TYPOGRAPHY */
 
 a {
@@ -100,39 +99,14 @@ a:hover {
 }
 
 /*  HEADER AREA AND NAVIGATION */
-/* these works here but not in navigation.module.css file... why? (removed from there, so some styling here and some there) */
 
 .menu ul {
   display: flex;
-  /* padding: 0; */
   gap: 2em;
 }
 
-@media screen and (max-width: 768px) {
-  .menu ul {
-    position: absolute;
-    top: 82px;
-    left: 0;
-    flex-direction: column;
-    width: 100%;
-    background: var(--bg4-clr);
-    display: none;
-    padding: 1em 0;
-  }
-  .menu.expanded ul {
-    z-index: 1000;
-    display: block;
-  }
-
-  .menu li {
-    text-align: center;
-    margin: 0;
-    color: red;
-  }
-}
-
 /* MODAL */
-/* need these here? */
+
 .modal {
   background-color: rgba(0, 0, 0, 0.9);
   position: fixed;
@@ -157,36 +131,8 @@ a:hover {
 .modal.exit .modalContent {
   transform: translateX(-500px);
 }
+
 /* MISCELLANOUS*/
-
-/* .horizontalLine {
-  color: var(--bg3-clr);
-} */
-
-/* check what to keep or not */
-
-/* .container {
-  max-width: 1000x;
-  margin: 1rem auto;
-} */
-
-/* .wrapper {
-  flex: 1 0 auto;
-} */
-
-.nav {
-  padding-left: 2em;
-}
-
-.brand {
-  font-size: 2em;
-  color: yellow !important;
-  padding-left: 1em;
-}
-
-.logged-in-link {
-  color: orange !important;
-}
 
 span {
   font-weight: bold;
@@ -196,73 +142,35 @@ span {
   text-align: center;
 }
 
-/* DETAIL PAGE */
-
-.detail {
-  max-width: 500px;
-  margin: 0 auto 5em;
-  padding: 0 1em;
-}
-
-.txt-container {
-  margin: 0 auto;
-  padding: 1em;
-}
-
 ul {
-  margin-top: 1em;
-  padding-left: 0;
   list-style: none;
 }
 
-.img-container {
-  text-align: center;
+/* MEDIA QUERIES */
+
+@media screen and (max-width: 768px) {
+  .menu ul {
+    position: absolute;
+    top: 82px;
+    left: 0;
+    flex-direction: column;
+    width: 100%;
+    background: var(--bg4-clr);
+    display: none;
+    padding: 1em 0;
+  }
+  .menu.expanded ul {
+    z-index: 1000;
+    display: block;
+  }
+
+  .menu li {
+    text-align: center;
+    margin: 0;
+    color: red;
+  }
 }
 
-.detail img {
-  max-height: 300px;
-}
-
-/* styles from the search video with dropdown */
-/* .App {
-  font-family: sans-serif;
-  text-align: center;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-.search-container {
-  width: 280px;
-  display: flex;
-  flex-direction: column;
-}
-
-.dropdown {
-  background-color: white;
-  display: flex;
-  flex-direction: column;
-  border: 1px solid gray;
-}
-
-.dropdown:empty {
-  border: none;
-}
-
-.dropdown-row {
-  cursor: pointer;
-  text-align: start;
-  margin: 2px 0;
-}
-
-input {
-  width: 220px;
-}
-
-.search-inner {
-  display: flex;
-}
- */
 @media (prefers-reduced-motion: reduce) {
   html:focus-within {
     scroll-behavior: auto;

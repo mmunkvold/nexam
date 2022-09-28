@@ -11,7 +11,8 @@
   flex-direction: column;
   gap: 3em;
 }
-/* IMAGE GALLERY GRID DESKTOP*/
+
+/* IMAGE GALLERY */
 
 .imageGalleryGrid {
   display: grid;
@@ -19,14 +20,17 @@
   flex: 0 0 65%;
   margin-top: 1.5em;
 }
-
+.mainImage {
+  width: 100%;
+}
 .thumbnails {
   display: flex;
-  /*  flex-wrap: wrap; */
 }
 
 .thumbnail {
   display: none;
+  width: 100%;
+  height: 100%;
 }
 
 .text {
@@ -77,6 +81,7 @@
   padding: 15px;
 }
 
+/* MEDIA QUERIES */
 @media screen and (min-width: 600px) {
   .mainBottom {
     flex-direction: row;

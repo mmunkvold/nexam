@@ -28,6 +28,11 @@
   text-align: center;
   color: var(--text-clr);
   max-height: 200px;
+  transition: transform 0.5s ease-in-out;
+}
+
+.card:hover {
+  transform: translateY(-0.25em) scale(1.02);
 }
 
 .cardImg {
@@ -56,6 +61,10 @@
 
 .activeBtn {
   composes: activeBtn from "../formElements/buttons/Button.module.css";
+}
+
+.detailLink:hover {
+  background: none;
 }
 
 /* MEDIA QUERIES 

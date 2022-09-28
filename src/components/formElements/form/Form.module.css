@@ -41,6 +41,10 @@ textarea {
   color: var(--text-clr);
 }
 
+textarea {
+  resize: none;
+}
+
 input[type="radio"],
 [type="checkbox"] {
   width: auto;

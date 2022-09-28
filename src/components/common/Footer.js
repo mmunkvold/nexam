@@ -12,7 +12,7 @@ const Footer = () => {
           <li className={styles.title}>Holidaze - Accommodation in Bergen</li>
           <div className={styles.horizontalLine}></div>
           <li className={styles.title}>Bergen City Travel Agency</li>
-          <li>Nedre Kaikanten</li>
+          <li>Nedre Kaikanten 4</li>
           <li>5011 Bergen</li>
           <div className={styles.horizontalLine}></div>
           <li>Office hours: Mon-sat 08-18 | Sun 10-20</li>
