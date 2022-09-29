@@ -8,7 +8,7 @@ import { BASE_URL } from "../../constants/api";
 import styles from "../formElements/form/Form.module.css";
 import styles2 from "../formElements/buttons/Button.module.css";
 
-const url = BASE_URL + "/enquiries";
+const url = BASE_URL + "enquiries";
 
 const schema = yup.object().shape({
   fullname: yup.string().required("Please enter your name").min(3, "Name must consist of min 3 letters"),
