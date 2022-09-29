@@ -49,7 +49,7 @@ const ContactForm = () => {
   return (
     <>
       <form className={styles.form} onSubmit={handleSubmit(onSubmit)}>
-        <div>{submitted && <span className="success">Your message was sent!</span>}</div>
+        <div>{submitted && <span className={styles.success}>Your message was sent!</span>}</div>
 
         <label htmlFor="fullname">Name:</label>
         {errors.fullname && <FormError>{errors.fullname.message}</FormError>}
