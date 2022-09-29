@@ -5,7 +5,6 @@ import { BsWifi2 } from "react-icons/bs";
 import { MdOutlineEmojiFoodBeverage } from "react-icons/md";
 import styles from "../../home/HomePage.module.css";
 
-//this is accommodations shown on the accommodation all page
 const Accommodations = ({ id, name, pets, cover_image, parking, wifi, breakfast, price, type }) => {
   return (
     <div>

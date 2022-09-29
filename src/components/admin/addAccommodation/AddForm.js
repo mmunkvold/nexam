@@ -2,10 +2,13 @@ import { useState, useContext } from "react";
 import { useForm } from "react-hook-form";
 import * as yup from "yup";
 import { yupResolver } from "@hookform/resolvers/yup";
+import { PRODUCTS_URL } from "../../../constants/api";
 import FormError from "../../common/FormError";
 import AuthContext from "../../../context/AuthContext";
 import styles from "../../formElements/form/Form.module.css";
 import styles2 from "./AddForm.module.css";
+
+const url = PRODUCTS_URL;
 
 const schema = yup.object().shape({
   name: yup.string().required("Please enter accommodation name"),
@@ -24,11 +27,8 @@ const schema = yup.object().shape({
 });
 
 const AddForm = () => {
-  //const [response, setResponse] = useState({});
   // eslint-disable-next-line
   const [submitted, setSubmitted] = useState(false);
-  //const [postError, setPostError] = useState(null);
-  //const [success, setSuccess] = useState(null);
   const [auth] = useContext(AuthContext);
 
   const {
@@ -41,8 +41,6 @@ const AddForm = () => {
 
   const token = auth.jwt;
   async function onSubmit(data) {
-    /* console.log("values", data); */
-
     const formData = new FormData();
 
     const dataInput = {
@@ -59,30 +57,27 @@ const AddForm = () => {
       price: data.price,
     };
 
-    //console.log("data", dataInput);
-
     formData.append("data", JSON.stringify(dataInput));
-
-    //"cover_image"
     formData.append("files.cover_image", data.cover_image[0]);
-
-    //"images"
     for (let i = 0; i < data.images.length; i++) {
       formData.append("files.images", data.images[i]);
     }
 
-    //add new accommodation
-    const addProduct = await fetch("https://noroff-exam.herokuapp.com/api/products?populate=*", {
+    const options = {
       method: "POST",
       body: formData,
       headers: {
         Authorization: `Bearer ${token}`,
       },
-    });
+    };
+
+    const addProduct = await fetch(url, options);
     const result = await addProduct.json();
     console.log("addProductResult:", result);
     reset();
+    setSubmitted(true);
   }
+
   const onMultiFileChange = (e) => {
     const files = e.target.files;
     setValue("images", files);
@@ -96,7 +91,7 @@ const AddForm = () => {
   return (
     <>
       <form className={styles.form} onSubmit={handleSubmit(onSubmit)}>
-        <div>{submitted && <span className={styles.success}>Your message was sent!</span>}</div>
+        <div>{submitted && <span className={styles.success}>Accommodation is added!</span>}</div>
 
         <label htmlFor="name">Name of accommodation:</label>
         {errors.name && <FormError>{errors.name.message}</FormError>}
@@ -104,8 +99,6 @@ const AddForm = () => {
 
         <fieldset>
           <legend>Accommodation type:</legend>
-          {/* error here? */}
-
           <input id="hotel" type="radio" name="type" value="hotel" checked="checked" {...register("type", { required: true })} />
           <label htmlFor="hotel">Hotel</label>
 
@@ -157,12 +150,10 @@ const AddForm = () => {
         <input id="price" type="number" name="price" {...register("price", { required: true })} />
 
         <label htmlFor="file">Cover Image:</label>
-        {/* change id! */}
         {errors.cover_image && <FormError>{errors.cover_image.message}</FormError>}
         <input type="file" id="file" name="file" onChange={onSingleFileChange} {...register("cover_image", { required: true })}></input>
 
         <label htmlFor="files">Images:</label>
-        {/* change htmlfor or id! */}
         {errors.images && <FormError>{errors.images.message}</FormError>}
         <input type="file" id="files" name="files" onChange={onMultiFileChange} multiple {...register("images", { required: true })}></input>
         <div className={styles2.flex}>

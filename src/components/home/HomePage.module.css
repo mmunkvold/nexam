@@ -67,8 +67,7 @@
   background: none;
 }
 
-/* MEDIA QUERIES 
-==================== */
+/* MEDIA QUERIES */
 
 @media (min-width: 500px) {
   .gridContainer {

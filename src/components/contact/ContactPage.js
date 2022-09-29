@@ -1,3 +1,4 @@
+import Head from "../common/Head";
 import Heading from "../typography/Heading";
 import img from "../../images/bergen_dock.jpg";
 import img2 from "../../images/bergen_ulriksbanen.jpg";
@@ -5,9 +6,14 @@ import ContactForm from "./ContactForm";
 import styles from "./ContactPage.module.css";
 
 const ContactPage = () => {
-  document.title = "Contact Us";
   return (
     <>
+      <Head
+        title="Contact Us"
+        addPostfixTitle={true}
+        keywords="contact"
+        description="Contact us for finding accommodation, add your own or just chat"
+      />
       <div className={styles.title}>
         <Heading title="Get in touch" subtitle="We're here to help you" />
       </div>

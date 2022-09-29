@@ -4,14 +4,10 @@ import * as yup from "yup";
 import { yupResolver } from "@hookform/resolvers/yup";
 import FormError from "../common/FormError";
 import axios from "axios";
-//import Input from "../form/inputs/Input";
-//import Form from "../form/Form";
-//import Button from "../form/buttons/Buttons";
 import { BASE_URL } from "../../constants/api";
-import styles from "../formElements/form/Form.module.css"; /* no need if using form above here.. */
+import styles from "../formElements/form/Form.module.css";
 
 const url = BASE_URL + "/messages";
-//console.log(url);
 
 const schema = yup.object().shape({
   fullname: yup.string().required("Please enter your name").min(3, "Name must consist of min 3 letters"),

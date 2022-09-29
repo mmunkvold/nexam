@@ -5,7 +5,6 @@ import styles from "./Modal.module.css";
 import styles2 from "../../formElements/buttons/Button.module.css";
 import "../../../App.css";
 
-//install react-transition-group
 const Modal = (props) => {
   const nodeRef = useRef(null);
 

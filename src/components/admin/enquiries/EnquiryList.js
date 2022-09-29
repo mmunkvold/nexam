@@ -6,7 +6,6 @@ import styles from "./Enquiry.module.css";
 
 const EnquiryList = () => {
   const [enquiries, setEnquiries] = useState([]);
-  //const [loading, setLoading] = useState(true);
   // eslint-disable-next-line
   const [error, setError] = useState(null);
 
@@ -16,7 +15,6 @@ const EnquiryList = () => {
     async function getEnquiries() {
       try {
         const response = await http.get("enquiries");
-        //console.log("response", response);
         setEnquiries(response.data.data);
       } catch (error) {
         console.log("error getting enquiries");

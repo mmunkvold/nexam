@@ -3,7 +3,6 @@ import styles from "../enquiries/Enquiry.module.css";
 import { AiOutlineMinus, AiOutlinePlus } from "react-icons/ai";
 import React, { useState } from "react";
 
-//NB! Subject didnt show in local1338 - check new version - added in strapi and pushed from there
 const ContactMessage = ({ id, fullname, email, message, subject }) => {
   const [expanded, setExpanded] = useState(false);
 

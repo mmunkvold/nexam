@@ -8,7 +8,7 @@ const HomePage = () => {
   return (
     <>
       <Head
-        title="Holidaze Home"
+        title="Home"
         addPostfixTitle={true}
         keywords="Holidaze, accommodation, bergen"
         description="Find your next stay in Bergen with Holidaze"

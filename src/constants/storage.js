@@ -23,17 +23,6 @@ export function getUsername() {
   return null;
 }
 
-//
-/* 
-export function clearLogoutFromStorage(user, token) {
-  localStorage.removeItem(userKey, user);
-  localStorage.removeItem(tokenKey, token);
-}
-
-export function clearStorage() {
-  localStorage.clear();
-} */
-
 export function saveToStorage(key, value) {
   localStorage.setItem(key, JSON.stringify(value));
 }
@@ -46,3 +35,14 @@ function getFromStorage(key) {
   }
   return JSON.parse(value);
 }
+
+//implement this?
+/* 
+export function clearLogoutFromStorage(user, token) {
+  localStorage.removeItem(userKey, user);
+  localStorage.removeItem(tokenKey, token);
+}
+
+export function clearStorage() {
+  localStorage.clear();
+} */

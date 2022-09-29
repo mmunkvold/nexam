@@ -4,10 +4,11 @@ import * as yup from "yup";
 import { yupResolver } from "@hookform/resolvers/yup";
 import FormError from "../common/FormError";
 import axios from "axios";
-//import Input from "../form/inputs/Input";
-//import Form from "../form/Form";
+import { BASE_URL } from "../../constants/api";
 import styles from "../formElements/form/Form.module.css";
 import styles2 from "../formElements/buttons/Button.module.css";
+
+const url = BASE_URL + "/enquiries";
 
 const schema = yup.object().shape({
   fullname: yup.string().required("Please enter your name").min(3, "Name must consist of min 3 letters"),
@@ -24,11 +25,9 @@ const schema = yup.object().shape({
   }),
 });
 
-//const url = BASE_URL + "/enquiries"; HVORFOR VIRKER IKKE DENNE?
 const EnquiryForm = (props) => {
   const [submitted, setSubmitted] = useState(false);
-  //const { id } = useParams(); //need this for id?
-  //but like this for name...?
+
   const { name } = props;
   const {
     register,
@@ -38,11 +37,8 @@ const EnquiryForm = (props) => {
   } = useForm({ resolver: yupResolver(schema) });
 
   function onSubmit(data) {
-    //const id = data.id;
-    //console.log(data);
-
     axios
-      .post("https://noroff-exam.herokuapp.com/api/enquiries", {
+      .post(url, {
         data: {
           fullname: data.fullname,
           message: data.message,

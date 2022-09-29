@@ -51,7 +51,6 @@ const Navigation = () => {
         >
           <HiMenuAlt3 />
         </button>
-        {/* these classes dont work in css modules... possible to write them in other way? */}
         <div className={isNavExpanded ? "menu expanded" : "menu"} onClick={() => setIsNavExpanded(!isNavExpanded)}>
           <ul>
             <li>

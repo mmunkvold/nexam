@@ -18,7 +18,7 @@ const AboutUsPage = () => {
       <div className={styles.flex}>
         <div className={styles.leftColumn}>
           <p>
-            We are a little local travel agency located downtown Bergen, probably the best place in Norway! No, seriously, Bergen has a lot to offer,
+            We are a small local travel agency located downtown Bergen, probably the best place in Norway! No, seriously, Bergen has a lot to offer,
             and we want you to come visit us.
           </p>
           <p>

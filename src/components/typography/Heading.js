@@ -13,10 +13,9 @@ const Heading = (props) => {
 };
 
 Heading.propTypes = {
-  title: PropTypes.string /* .isRequired */,
+  title: PropTypes.string,
   subtitle: PropTypes.string,
   subsubtitle: PropTypes.string,
 };
 
 export default Heading;
-//see if I need to have the title required... gives error on accommodationpage because i dont use it there...

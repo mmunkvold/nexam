@@ -48,7 +48,7 @@ const AccommodationDetail = ({
             <div>
               <div className={styles.thumbnails}>
                 {images.data.map((image, i) => (
-                  <div key={i} className="">
+                  <div key={i}>
                     <img src={`${image.attributes.formats.thumbnail.url}`} alt={name} className={styles.thumbnail} />
                   </div>
                 ))}

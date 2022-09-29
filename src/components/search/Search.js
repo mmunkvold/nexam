@@ -18,7 +18,6 @@ const Search = () => {
         const results = await axios.get(url);
         setData(results.data.data);
         setFiltered(results.data.data);
-        //console.log(res.data.data);
       } catch (err) {
         throw new Error(err);
       }
@@ -32,7 +31,6 @@ const Search = () => {
     setData(results);
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [result]);
-  //console.log(data)
 
   const onChange = (e) => {
     setResult(e.target.value);

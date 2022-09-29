@@ -6,7 +6,6 @@ import styles from "../enquiries/Enquiry.module.css";
 
 const ContactMessageList = () => {
   const [messages, setMessages] = useState([]);
-  //const [loading, setLoading] = useState(true);
   // eslint-disable-next-line
   const [error, setError] = useState(null);
 
@@ -16,7 +15,6 @@ const ContactMessageList = () => {
     async function getMessages() {
       try {
         const response = await http.get("messages");
-        //console.log("response", response);
         setMessages(response.data.data);
       } catch (error) {
         console.log("error getting messages");

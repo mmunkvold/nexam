@@ -24,11 +24,11 @@
 }
 
 .input {
-  background: none /* !important */; /* do i need these importants? */
+  background: none;
   color: var(--text-clr);
   width: 240px;
-  border: none /* !important */;
-  border-bottom: 1px solid var(--fg2-clr) /* !important */;
+  border: none;
+  border-bottom: 1px solid var(--fg2-clr);
   margin-left: auto;
 }
 
@@ -41,6 +41,8 @@
 .form {
   composes: form from "../formElements/form/Form.module.css";
 }
+
+/* MEDIA QUERIES */
 
 @media (min-width: 1150px) {
   .searchResult,
