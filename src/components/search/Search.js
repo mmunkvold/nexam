@@ -1,7 +1,6 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
 import { Link } from "react-router-dom";
-import { GiMagnifyingGlass } from "react-icons/gi";
 import { PRODUCTS_URL } from "../../constants/api";
 import styles from "./Search.module.css";
 

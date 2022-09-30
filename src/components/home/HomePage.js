@@ -2,7 +2,6 @@ import Heading from "../typography/Heading";
 import AccommodationAll from "../accommodations/accommodationAll/AccommodationAll";
 import Head from "../common/Head";
 import styles from "./HomePage.module.css";
-import Search from "../search/Search";
 
 const HomePage = () => {
   return (
