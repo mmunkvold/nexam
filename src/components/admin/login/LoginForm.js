@@ -39,7 +39,6 @@ const LoginForm = () => {
     try {
       const response = await axios.post(url, data);
 
-      console.log("response", response.data);
       setAuth(response.data);
       navigate("/admin");
     } catch (error) {
