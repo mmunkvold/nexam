@@ -7,8 +7,8 @@ import axios from "axios";
 import FormError from "../../common/FormError";
 import { LOGIN_URL } from "../../../constants/api";
 import AuthContext from "../../../context/AuthContext";
-import styles from "../../formElements/form/Form.module.css";
-import styles2 from "../../formElements/buttons/Button.module.css";
+import styles from "../../formElements/Form.module.css";
+import styles2 from "../../formElements/Button.module.css";
 
 const url = LOGIN_URL;
 
@@ -36,8 +36,6 @@ const LoginForm = () => {
     setSubmitting(true);
     setLoginError(null);
 
-    console.log(data);
-
     try {
       const response = await axios.post(url, data);
 
@@ -56,17 +54,17 @@ const LoginForm = () => {
     <>
       <form className={styles.form} onSubmit={handleSubmit(onSubmit)}>
         {loginError && <FormError>{loginError}</FormError>}
-        <fieldset disabled={submitting}>
+        <div disabled={submitting}>
           <label htmlFor="username">Username:</label>
-          <input id="username" type="text" name="username" {...register("identifier", { required: true })} />
+          <input id="username" type="text" name="username" {...register("identifier")} />
           {errors.username && <FormError>{errors.username.message}</FormError>}
 
           <label htmlFor="password">Password:</label>
-          <input id="password" type="password" name="password" {...register("password", { required: true })} />
+          <input id="password" type="password" name="password" {...register("password")} />
           {errors.password && <FormError>{errors.password.message}</FormError>}
 
-          <button className={styles2.button}>{submitting ? "Loggin in..." : "Login"}</button>
-        </fieldset>
+          <button className={styles2.button}>{submitting ? "Login in..." : "Login"}</button>
+        </div>
       </form>
     </>
   );

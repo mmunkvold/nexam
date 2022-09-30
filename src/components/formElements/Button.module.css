@@ -1,0 +1,45 @@
+.button {
+  background: var(--bg4-clr);
+  color: var(--text-clr);
+}
+
+.button,
+.activeBtn,
+.loginBtn {
+  padding: 0.6em;
+  border-radius: 2px;
+  text-transform: uppercase;
+  letter-spacing: 1.1px;
+  border: 2px solid transparent;
+  margin: 2em 0.5em 1em 0;
+  font-size: 0.7rem;
+  box-shadow: 0 2px var(--bg2-clr);
+  cursor: pointer;
+}
+
+.button:hover,
+.loginBtn:hover {
+  background: none;
+  border: 2px solid var(--bg4-clr);
+  color: var(--text-clr);
+}
+
+.button:active,
+.loginBtn:active {
+  box-shadow: 0 1px var(--bg3-clr);
+  transform: translateY(2px);
+}
+
+.activeBtn {
+  background: var(--bg3-clr);
+  color: var(--text-clr);
+  box-shadow: 0 2px var(--bg2-clr);
+}
+
+.loginBtn {
+  margin: 0 auto;
+  max-width: 100px;
+  width: 100px;
+  background: var(--text-clr);
+  color: var(--bg-clr);
+}

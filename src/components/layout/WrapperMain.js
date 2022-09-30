@@ -1,4 +1,3 @@
-import React from "react";
 import styles from "./WrapperMain.module.css";
 
 const WrapperMain = (props) => {

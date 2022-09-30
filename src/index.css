@@ -1,12 +1,213 @@
-/* body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+@import url("https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,400;0,600;0,700;1,400&family=Ovo&display=swap");
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New", monospace;
-} */
-/* delete this file I guess?... */
+#root {
+  --ff-logo: "Birthstone", cursive;
+  --ff-heading: "Ovo", serif;
+  --ff-body: "Mulish", sans-serif;
+
+  /* Foreground colors */
+  --text-clr: #f7f9fb;
+  --fg2-clr: #cad8e6;
+  --fg3-clr: #8dabca;
+  --fg4-clr: #4a739f;
+
+  /*  Background colors */
+  --bg-clr: #121212;
+  --bg2-clr: #192635;
+  --bg3-clr: #273c53;
+  --bg4-clr: #355272;
+
+  /* Notification/Link colors */
+  --link-clr: #00c7b3;
+  --green-clr: #00c7b3;
+  accent-color: rgb(232, 101, 219);
+
+  /* other common/global styles */
+  --border-radius: 2px;
+}
+
+html:focus-within {
+  scroll-behavior: smooth;
+}
+
+html {
+  scroll-behavior: smooth;
+  height: 100%;
+}
+
+html,
+body {
+  margin: 0;
+  height: 100%;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100%;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+  border: 2px solid var(--bg2-clr);
+}
+
+/* TYPOGRAPHY */
+
+a {
+  color: var(--link-clr);
+  padding: 0.3em;
+  border-radius: var(--border-radius);
+  border: 2px solid transparent;
+}
+
+a:hover {
+  text-decoration: none;
+  background: var(--bg4-clr);
+}
+
+.current {
+  border: 2px solid var(--bg4-clr);
+  text-decoration: none;
+}
+
+h1 {
+  font-size: 2rem;
+}
+
+h1,
+h2,
+h3 {
+  font-family: var(--ff-heading);
+  font-weight: lighter;
+  margin: 0.5em 0;
+}
+
+.react-tabs__tab:hover {
+  color: var(--link-clr);
+}
+
+.react-tabs__tab--selected {
+  font-weight: bold;
+}
+
+/*  HEADER AREA AND NAVIGATION */
+
+.menu ul {
+  display: flex;
+  gap: 2em;
+}
+
+/* MODAL */
+
+.modal {
+  background-color: rgba(0, 0, 0, 0.6);
+  position: fixed;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  transition: all 0.8s ease-in;
+  pointer-events: none;
+}
+
+.modal2 {
+  background-color: var(--bg2-clr);
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 50%;
+  height: 90%;
+  overflow: auto;
+}
+
+.modal.enter-done {
+  opacity: 1;
+  pointer-events: visible;
+}
+
+.modal.exit {
+  opacity: 0.9;
+}
+
+.modal.enter-done .modalContent {
+  transform: translateY(0);
+}
+
+.modal.exit .modalContent {
+  transform: translateX(-500px);
+}
+
+.modalContent {
+  width: 50%;
+  margin: 0 auto;
+  transition: all 0.7s ease-in-out;
+}
+
+/* MISCELLANOUS*/
+
+span {
+  font-weight: bold;
+}
+
+.center {
+  text-align: center;
+}
+
+ul {
+  list-style: none;
+}
+
+.smallText {
+  font-size: small;
+  font-style: italic;
+}
+
+/* MEDIA QUERIES */
+
+@media screen and (max-width: 928px) {
+  .menu ul {
+    position: absolute;
+    top: 82px;
+    left: 0;
+    flex-direction: column;
+    width: 100%;
+    background: var(--bg4-clr);
+    display: none;
+    padding: 1em 0;
+  }
+
+  .menu.expanded ul {
+    z-index: 1000;
+    display: block;
+  }
+
+  .menu li {
+    text-align: center;
+    margin: 0;
+    color: red;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html:focus-within {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}

@@ -13,11 +13,9 @@ const HomePage = () => {
         keywords="Holidaze, accommodation, bergen"
         description="Find your next stay in Bergen with Holidaze"
       />
-      <div className={styles.search}>
-        <Search />
-      </div>
+
       <div className={styles.center}>
-        <Heading title="Find a place to stay in Bergen" subtitle="Hotels, Guesthouses and B&amp;B's" />
+        <Heading title="Find a place to stay in Bergen" />
       </div>
 
       <AccommodationAll />

@@ -1,10 +1,13 @@
-import React from "react";
 import { BsFillTelephoneFill } from "react-icons/bs";
 import { IoMdMail } from "react-icons/io";
 import logo from "../../logo.png";
 import styles from "./Footer.module.css";
 
 const Footer = () => {
+  const handleOnClick = () => {
+    window.scrollTo(0, 0);
+  };
+
   return (
     <footer>
       <div className={styles.footerContent}>
@@ -26,9 +29,15 @@ const Footer = () => {
             <a href="/">© Holidaze 2022</a>
           </li>
         </ul>
-        <a href="/">
-          <img src={logo} className={styles.logo} alt="Back to home" />
-        </a>
+        <div>
+          <a href="/">
+            <img src={logo} className={styles.logo} alt="Back to home" />
+          </a>
+
+          <button id="totop" onClick={handleOnClick} className={styles.button}>
+            Top of page
+          </button>
+        </div>
       </div>
     </footer>
   );

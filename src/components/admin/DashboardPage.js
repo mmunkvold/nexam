@@ -1,4 +1,4 @@
-import React, { useContext, useEffect } from "react";
+import { useContext, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { Tab, Tabs, TabList, TabPanel } from "react-tabs";
 import "react-tabs/style/react-tabs.css";
@@ -28,8 +28,7 @@ const DashboardPage = () => {
       <div className={styles.flex}>
         <div className={styles.leftColumn}>
           <h2>Hi there!</h2>
-          <p className="">You are now logged in. </p>
-          <p>(To log out, use the logout-button in the menu.)</p>
+          <p>You are now logged in to the dashboard. </p>
           <span>Here you can: </span>
           <ul>
             <li>&bull; check messages</li>

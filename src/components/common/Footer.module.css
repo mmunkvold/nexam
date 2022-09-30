@@ -50,7 +50,11 @@ footer a {
 
 .logo {
   display: none;
-  margin-top: 5em;
+  margin: 5em 0;
+}
+
+.button {
+  composes: button from "../formElements/Button.module.css";
 }
 
 /* MEDIA QUERIES */
@@ -59,6 +63,7 @@ footer a {
   .footerContent {
     flex-direction: row;
   }
+
   .logo {
     display: block;
   }

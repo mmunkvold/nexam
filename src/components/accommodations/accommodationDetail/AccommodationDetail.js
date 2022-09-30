@@ -1,12 +1,13 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
-import Head from "../../common/Head";
 import { FaDog, FaParking, FaMapMarkerAlt } from "react-icons/fa";
-import { BsWifi2 } from "react-icons/bs";
+import { BsWifi2, BsFillTelephoneFill } from "react-icons/bs";
 import { MdOutlineEmojiFoodBeverage } from "react-icons/md";
+import { IoMdMail } from "react-icons/io";
+import Head from "../../common/Head";
 import Heading from "../../typography/Heading";
 import EnquiryForm from "../../enquiry/EnquiryForm";
-import Modal from "../../layout/modal/Modal";
+import Modal from "../../layout/Modal";
 import styles from "./AccommodationDetail.module.css";
 
 const AccommodationDetail = ({
@@ -38,7 +39,6 @@ const AccommodationDetail = ({
       />
       <div className={styles.main}>
         <Heading title={name} />
-        <p>{short_description}</p>
 
         <div className={styles.flex}>
           <div className={styles.imageGalleryGrid}>
@@ -58,13 +58,14 @@ const AccommodationDetail = ({
 
           <div className={styles.text}>
             <div>
-              <Heading subtitle={subheading} />
+              <h2>{subheading}</h2>
               <p>{description}</p>
             </div>
 
-            <button className={styles.button} onClick={() => setShow(true)}>
-              Enquiry
+            <button className={styles.enquiryBtn} onClick={() => setShow(true)}>
+              Reservation Enquiry
             </button>
+
             <Modal title="Enquiry" onClose={() => setShow(false)} show={show}>
               <EnquiryForm key={id} id={id} name={name} />
             </Modal>
@@ -72,7 +73,7 @@ const AccommodationDetail = ({
         </div>
 
         <div className={styles.horizontalLine}></div>
-        <Heading subsubtitle="Good to know" />
+        <h3>Good to know</h3>
         <div className={styles.mainBottom}>
           <div>
             <p>
@@ -116,12 +117,19 @@ const AccommodationDetail = ({
           <div className={styles.addressBox}>
             <p>
               <FaMapMarkerAlt className={styles.icons} />
-              Our Location:
+              {address}
             </p>
-            <p>{address}</p>
-            <button className={styles.button} onClick={() => setShow(true)}>
-              Enquiry
-            </button>
+            <p>
+              <IoMdMail className={styles.icons} /> email@email.com
+            </p>
+            <p>
+              <BsFillTelephoneFill className={styles.icons} /> 123 45 678
+            </p>
+            <div className={styles.center}>
+              <button className={styles.enquiryBtn} onClick={() => setShow(true)}>
+                Reservation Enquiry
+              </button>
+            </div>
           </div>
         </div>
         <div className={styles.right}>

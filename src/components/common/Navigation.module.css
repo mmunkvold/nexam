@@ -9,7 +9,7 @@
 }
 
 nav {
-  height: 100px;
+  height: 130px;
   width: 95%;
   max-width: 1390px;
   margin: 0 auto;
@@ -31,16 +31,18 @@ nav {
   font-family: var(--ff-body);
 }
 
+.flex {
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+}
+
 .logo {
-  margin-left: 1rem;
+  margin-top: 1em;
 }
 
 .logo:hover {
   background: none;
-}
-
-.search {
-  display: block;
 }
 
 .hamburger {
@@ -63,38 +65,31 @@ nav {
 .loggedIn {
   display: flex;
   flex-direction: row;
+  gap: 0.3em;
 }
 
 .loginBtn {
-  max-width: 100px;
-  margin: 0 auto;
+  composes: loginBtn from "../../components/formElements/Button.module.css";
 }
 
 /* MEDIA QUERIES */
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 928px) {
   .hamburger {
     display: block;
   }
+
   .link {
     width: 100%;
     padding: 1.2rem 0;
   }
+
   .link:hover {
     background-color: var(--bg3-clr);
   }
+
   .loggedIn {
     display: flex;
     flex-direction: column;
   }
-  .search {
-    display: none;
-  }
 }
-@media screen and (max-width: 1150px) {
-  .search {
-    display: none;
-  }
-}
-
-/* NB! some of the styling for the nav is in app.css as they dont work here... */

@@ -1,4 +1,3 @@
-import "../../../App.css";
 import { useEffect, useState } from "react";
 import useAxios from "../../../hooks/useAxios";
 import Enquiry from "./Enquiry";
@@ -17,8 +16,7 @@ const EnquiryList = () => {
         const response = await http.get("enquiries");
         setEnquiries(response.data.data);
       } catch (error) {
-        console.log("error getting enquiries");
-        setError(error.toString());
+        setError("Sorry, couldn't get any messages");
       }
     }
     getEnquiries();
@@ -26,7 +24,7 @@ const EnquiryList = () => {
   }, []);
 
   return (
-    <div className="">
+    <div>
       <div className={styles.flex}>
         {enquiries &&
           enquiries.map((item) => {

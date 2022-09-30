@@ -1,4 +1,4 @@
-import React, { useContext, useState, useEffect } from "react";
+import { useContext, useState, useEffect } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import AuthContext from "../../context/AuthContext";
 import { HiMenuAlt3 } from "react-icons/hi";
@@ -34,17 +34,16 @@ const Navigation = () => {
   return (
     <div className={styles.header}>
       <nav>
-        <div>
+        <div className={styles.flex}>
           <Link to="/" exact="true" className={styles.logo}>
             <img src={logo} alt="Back to home" />
           </Link>
-        </div>
-        <div className={styles.search}>
-          <Search />
+          <Search className={styles.search} />
         </div>
 
         <button
           className={styles.hamburger}
+          aria-label="Search"
           onClick={() => {
             setIsNavExpanded(!isNavExpanded);
           }}

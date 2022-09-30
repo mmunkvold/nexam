@@ -26,9 +26,12 @@
   padding: 0 1em;
 }
 
-.btn {
+.button {
+  composes: button from "../../formElements/Button.module.css";
   background: var(--bg4-clr);
-  border-color: transparent;
+}
+.button svg {
+  font-size: 1.5em;
 }
 
 .messageTitle {

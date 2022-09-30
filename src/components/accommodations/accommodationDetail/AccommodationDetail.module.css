@@ -9,20 +9,18 @@
 .flex {
   display: flex;
   flex-direction: column;
-  gap: 3em;
+  gap: 1em;
 }
-
-/* IMAGE GALLERY */
 
 .imageGalleryGrid {
   display: grid;
   width: 100%;
-  flex: 0 0 65%;
-  margin-top: 1.5em;
 }
+
 .mainImage {
   width: 100%;
 }
+
 .thumbnails {
   display: flex;
 }
@@ -34,11 +32,13 @@
 }
 
 .text {
-  flex: 0 0 35%;
+  flex: 0 0 40%;
+  background: var(--bg3-clr);
+  padding: 0 2em;
 }
 
 .icons {
-  font-size: 1.3em;
+  font-size: 1.1em;
   margin-right: 10px;
   position: relative;
   top: 3px;
@@ -50,9 +50,12 @@
   justify-content: space-between;
 }
 
-.button {
-  composes: button from "../../formElements/buttons/Button.module.css";
-  background: var(--bg4-clr);
+.enquiryBtn {
+  composes: button from "../../formElements/Button.module.css";
+  background: var(--green-clr);
+  margin: 2em auto;
+  color: var(--bg-clr);
+  font-weight: bold;
 }
 
 .right {
@@ -61,7 +64,7 @@
 }
 
 .horizontalLine {
-  border-top: 1px solid var(--bg3-clr);
+  border-top: 1px solid var(--bg4-clr);
   margin: 2em 0;
 }
 
@@ -69,7 +72,7 @@
   background: rgba(202, 216, 230, 0.1);
   margin-bottom: 1em;
   padding: 1em 2em;
-  width: 300px;
+  width: 100%;
   border-radius: var(--border-radius);
 }
 
@@ -83,20 +86,31 @@
 
 /* MEDIA QUERIES */
 
-@media screen and (min-width: 600px) {
+@media screen and (min-width: 800px) {
+  .main {
+    padding: 0.1em 3em 2em;
+  }
+
+  .flex {
+    flex-direction: row;
+  }
+
   .mainBottom {
     flex-direction: row;
     gap: 2em;
   }
-}
-@media screen and (min-width: 768px) {
-  .main {
-    padding: 0.1em 5em 2em;
+
+  .addressBox {
+    width: 40%;
   }
+
+  .center {
+    text-align: center;
+  }
+}
+
+@media screen and (min-width: 998px) {
   .thumbnail {
     display: flex;
-  }
-  .flex {
-    flex-direction: row;
   }
 }

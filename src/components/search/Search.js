@@ -1,6 +1,7 @@
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import axios from "axios";
 import { Link } from "react-router-dom";
+import { GiMagnifyingGlass } from "react-icons/gi";
 import { PRODUCTS_URL } from "../../constants/api";
 import styles from "./Search.module.css";
 
@@ -38,17 +39,18 @@ const Search = () => {
 
   return (
     <div>
-      <div className={styles.searchContainer}>
+      <div>
         <input
           className={styles.input}
           aria-label="Search"
           type="text"
-          placeholder="Search accommodation..."
+          placeholder="🔍  Search accommodation... "
           value={result}
           onChange={onChange}
           onFocus={() => setShowHits(true)}
           onBlur={() => setShowHits(false)}
         />
+
         <div className={styles.searchResults}>
           <div>
             {showHits ? (

@@ -1,5 +1,7 @@
-.search {
+.searchMobile {
   display: block;
+  width: 200px;
+  background-color: red;
 }
 
 /* ACCOMMODATION GRID DISPLAY */
@@ -56,11 +58,11 @@
 }
 
 .button {
-  composes: button from "../formElements/buttons/Button.module.css";
+  composes: button from "../formElements/Button.module.css";
 }
 
 .activeBtn {
-  composes: activeBtn from "../formElements/buttons/Button.module.css";
+  composes: activeBtn from "../formElements/Button.module.css";
 }
 
 .detailLink:hover {
@@ -91,12 +93,13 @@
   }
 }
 
-@media (min-width: 1150px) {
-  .gridContainer {
-    grid-template-columns: repeat(5, 1fr);
+/* @media (min-width: 1150px) {
+  .searchMobile {
+    display: none;
   }
-  .search {
+} */
+@media (min-width: 1248) {
+  .searchMobile {
     display: none;
   }
 }
-/* check grid layout styling with kevin */

@@ -1,4 +1,3 @@
-import React from "react";
 import { Helmet } from "react-helmet-async";
 
 const MAIN_KEYWORDS = "Bergen, Ulriksbanen, accommodation, hotel, guesthouse, bed&breakfast";

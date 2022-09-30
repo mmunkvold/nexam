@@ -15,7 +15,8 @@ const ContactPage = () => {
         description="Contact us for finding accommodation, add your own or just chat"
       />
       <div className={styles.title}>
-        <Heading title="Get in touch" subtitle="We're here to help you" />
+        <Heading title="Get in touch" />
+        <h2>We're here to help you</h2>
       </div>
       <div className={styles.flex}>
         <div className={styles.leftColumn}>

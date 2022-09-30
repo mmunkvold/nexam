@@ -7,7 +7,7 @@ const LoginPage = () => {
   return (
     <>
       <Head title="Login" addPostfixTitle={true} keywords="login" description="Login to dashboard Holidaze" />
-      <div className={styles.center}>
+      <div className="center">
         <Heading title="Login" />
       </div>
       <LoginForm />

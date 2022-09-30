@@ -1,6 +1,6 @@
 .searchLink {
   cursor: pointer;
-  padding: 0.5em 2em 0;
+  padding: 0.3em 2em 0 0;
 }
 
 .searchLink:hover {
@@ -28,18 +28,19 @@
   color: var(--text-clr);
   width: 240px;
   border: none;
-  border-bottom: 1px solid var(--fg2-clr);
-  margin-left: auto;
+  border-bottom: 1px solid var(--fg3-clr);
+  margin: 0 0 1em 1em;
 }
 
 ::placeholder {
-  color: var(--fg2-clr);
+  color: var(--fg3-clr);
   font-style: italic;
   letter-spacing: 1px;
+  font-size: small;
 }
 
 .form {
-  composes: form from "../formElements/form/Form.module.css";
+  composes: form from "../formElements/Form.module.css";
 }
 
 /* MEDIA QUERIES */

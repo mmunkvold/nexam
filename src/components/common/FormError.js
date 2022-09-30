@@ -1,5 +1,5 @@
 import PropTypes from "prop-types";
-import styles from "../formElements/form/Form.module.css";
+import styles from "../formElements/Form.module.css";
 
 const ValidationError = ({ children }) => {
   return <div className={styles.formError}>{children}</div>;

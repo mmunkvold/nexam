@@ -1,5 +1,3 @@
-import "../../../App.css"; /* do i need this? */
-//import axios from "axios";
 import { useEffect, useState } from "react";
 import Accommodations from "./Accommodations";
 import { PRODUCTS_URL } from "../../../constants/api";

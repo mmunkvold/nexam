@@ -1,4 +1,3 @@
-import "../../../App.css";
 import { useEffect, useState } from "react";
 import ContactMessage from "./ContactMessage";
 import useAxios from "../../../hooks/useAxios";
@@ -17,8 +16,7 @@ const ContactMessageList = () => {
         const response = await http.get("messages");
         setMessages(response.data.data);
       } catch (error) {
-        console.log("error getting messages");
-        setError(error.toString());
+        setError("Sorry, couldn't get any messages");
       }
     }
     getMessages();

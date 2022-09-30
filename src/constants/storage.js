@@ -13,16 +13,6 @@ export function saveUser(user) {
   saveToStorage(userKey, user);
 }
 
-//tror ikke jeg trenger disse ...
-export function getUsername() {
-  const user = getFromStorage(userKey);
-
-  if (user) {
-    return user.username;
-  }
-  return null;
-}
-
 export function saveToStorage(key, value) {
   localStorage.setItem(key, JSON.stringify(value));
 }
@@ -35,14 +25,3 @@ function getFromStorage(key) {
   }
   return JSON.parse(value);
 }
-
-//implement this?
-/* 
-export function clearLogoutFromStorage(user, token) {
-  localStorage.removeItem(userKey, user);
-  localStorage.removeItem(tokenKey, token);
-}
-
-export function clearStorage() {
-  localStorage.clear();
-} */

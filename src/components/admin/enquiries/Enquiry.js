@@ -1,8 +1,7 @@
+import { useState } from "react";
 import PropTypes from "prop-types";
-import "../../../App.css";
-import styles from "./Enquiry.module.css";
 import { AiOutlineMinus, AiOutlinePlus } from "react-icons/ai";
-import React, { useState } from "react";
+import styles from "./Enquiry.module.css";
 
 const Enquiry = ({ id, fullname, email, message, accommodationName, beds, start, end }) => {
   const [expanded, setExpanded] = useState(false);
@@ -16,7 +15,7 @@ const Enquiry = ({ id, fullname, email, message, accommodationName, beds, start,
           </p>
           <p>From: {fullname}</p>
         </div>
-        <button className={styles.btn} onClick={() => setExpanded(!expanded)}>
+        <button className={styles.button} onClick={() => setExpanded(!expanded)}>
           {expanded ? <AiOutlineMinus /> : <AiOutlinePlus />}
         </button>
       </div>

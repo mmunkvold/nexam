@@ -1,7 +1,6 @@
-import React from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { AuthProvider } from "../../context/AuthContext";
-import { Navigation, HomePage, Footer, ContactPage, /* Enquiry, */ LoginPage, AboutUsPage, AccommodationPage, DashboardPage } from "../index";
+import { Navigation, HomePage, Footer, ContactPage, LoginPage, AboutUsPage, AccommodationPage, DashboardPage } from "../index";
 
 import Container from "./Container";
 import WrapperMain from "./WrapperMain";
@@ -18,7 +17,6 @@ const Layout = () => {
               <Route path="/contact" element={<ContactPage />} />
               <Route path="/login" element={<LoginPage />} />
               <Route path="/detail/:id" element={<AccommodationPage />} />
-              {/* <Route path="/enquiry/:id" element={<Enquiry />} /> */}
               <Route path="/about" element={<AboutUsPage />} />
               <Route path="/admin" element={<DashboardPage />} />
             </Routes>
@@ -31,4 +29,3 @@ const Layout = () => {
 };
 
 export default Layout;
-//delete enquriy?

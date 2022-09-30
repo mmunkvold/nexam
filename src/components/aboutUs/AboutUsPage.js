@@ -13,8 +13,8 @@ const AboutUsPage = () => {
         keywords="About, Holidaze"
         description="Holidaze is a website created by us, a little local tour agency called Bergen City Travel Agency"
       />
-      <Heading title="Making visiting Bergen easier" subtitle="A little bit about us" />
-
+      <Heading title="Making visiting Bergen easier" />
+      <h2>A little bit about us</h2>
       <div className={styles.flex}>
         <div className={styles.leftColumn}>
           <p>
