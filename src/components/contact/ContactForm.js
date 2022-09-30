@@ -57,7 +57,7 @@ const ContactForm = () => {
         {sendError && <FormError>{sendError}</FormError>}
         <div>{submitted && <span className={styles.success}>Your message was sent!</span>}</div>
         <p className="smallText">All fields are required</p>
-        <label htmlFor="fullname">Name:</label>
+        <label htmlFor="fullname">Your name:</label>
         {errors.fullname && <FormError>{errors.fullname.message}</FormError>}
         <input id="fullname" type="text" name="fullname" {...register("fullname")} />
 

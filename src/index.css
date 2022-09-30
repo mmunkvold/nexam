@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,400;0,600;0,700;1,400&family=Ovo&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Goudy+Bookletter+1911&family=Mulish:ital@0;1&display=swap");
 
 *,
 *::before,
@@ -7,8 +7,7 @@
 }
 
 #root {
-  --ff-logo: "Birthstone", cursive;
-  --ff-heading: "Ovo", serif;
+  --ff-heading: "Goudy Bookletter 1911", serif;
   --ff-body: "Mulish", sans-serif;
 
   /* Foreground colors */
@@ -124,9 +123,10 @@ h3 {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  width: 50%;
-  height: 90%;
+  width: 90%;
+  height: 80%;
   overflow: auto;
+  margin: 0 auto;
 }
 
 .modal.enter-done {
@@ -147,8 +147,8 @@ h3 {
 }
 
 .modalContent {
-  width: 50%;
-  margin: 0 auto;
+  /*   width: 100%; */
+  /*  margin: 0 auto; */
   transition: all 0.7s ease-in-out;
 }
 
@@ -194,6 +194,13 @@ ul {
     text-align: center;
     margin: 0;
     color: red;
+  }
+}
+
+@media screen and (min-width: 750px) {
+  .modal2 {
+    width: 700px;
+    height: 85%;
   }
 }
 

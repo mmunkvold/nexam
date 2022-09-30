@@ -11,7 +11,7 @@ const Footer = () => {
   return (
     <footer>
       <div className={styles.footerContent}>
-        <ul>
+        <ul className={styles.ul}>
           <li className={styles.title}>Holidaze - Accommodation in Bergen</li>
           <div className={styles.horizontalLine}></div>
           <li className={styles.title}>Bergen City Travel Agency</li>

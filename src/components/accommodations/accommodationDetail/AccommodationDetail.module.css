@@ -69,7 +69,7 @@
 }
 
 .addressBox {
-  background: rgba(202, 216, 230, 0.1);
+  background: var(--bg3-clr);
   margin-bottom: 1em;
   padding: 1em 2em;
   width: 100%;

@@ -8,6 +8,7 @@
   font-size: smaller;
   margin-top: 0;
   padding: 0;
+  border-radius: none;
 }
 
 .notification {

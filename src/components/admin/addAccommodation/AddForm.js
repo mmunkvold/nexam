@@ -171,7 +171,7 @@ const AddForm = () => {
         {errors.images && <FormError>{errors.images.message}</FormError>}
         <input type="file" id="files" name="files" onChange={onMultiFileChange} multiple {...register("images")}></input>
         <div className={styles2.flex}>
-          <button className={styles.button}>Add product</button>
+          <button className={styles.button}>Add accommodation</button>
         </div>
       </form>
     </>

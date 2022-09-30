@@ -7,7 +7,7 @@ footer {
   line-height: 1.8;
   letter-spacing: 1.1px;
   text-transform: uppercase;
-  padding: 2em 2em 3em;
+  padding: 2em 1em 3em;
   text-align: center;
   background-color: var(--bg2-clr);
   width: 100vw;
@@ -33,6 +33,10 @@ footer a {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+}
+
+.ul {
+  padding-left: 0;
 }
 
 .title {
