@@ -56,7 +56,7 @@ const LoginForm = () => {
         <div disabled={submitting}>
           <label htmlFor="username">Username:</label>
           <input id="username" type="text" name="username" {...register("identifier")} />
-          {errors.username && <FormError>{errors.username.message}</FormError>}
+          {errors.identifier && <FormError>{errors.identifier.message}</FormError>}
 
           <label htmlFor="password">Password:</label>
           <input id="password" type="password" name="password" {...register("password")} />
