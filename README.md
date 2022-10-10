@@ -1,6 +1,7 @@
 # PROJECT EXAM 2
 
-(images from project to be put here)
+<img src="https://github.com/mmunkvold/jsframeworksCA/blob/main/src/images/holidaze.png" width="250" alt="Holidaze Home Page">
+<img src="https://github.com/mmunkvold/jsframeworksCA/blob/main/src/images/detail2.png" width="250" alt="Detail Page showing one accommodation">
 
 Final Exam after 2 years of study, creating a booking website called Holidaze
 
