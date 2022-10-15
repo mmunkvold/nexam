@@ -32,7 +32,7 @@ To get this project up and running locally on your computer:
 1. Clone the repo:
 
 ```bash
-git@github.com:mmunkvold/jsframeworksCA.git
+git@github.com:mmunkvold/nexam.git
 ```
 
 2. Install the app and the dependencies:
